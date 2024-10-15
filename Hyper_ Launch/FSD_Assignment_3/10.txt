@@ -1,0 +1,141 @@
+10. What is the spread operator in JavaScript, and what are its primary uses? 
+    How does it differ from the rest parameter?
+
+The spread operator (...) allows an iterable (like an array or object) to be expanded into individual elements.
+
+Primary Uses:
+
+Copying arrays/objects
+Merging arrays/objects
+Passing elements of an array as arguments to a function
+
+Example of Spread Operator:
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2);  // [1, 2, 3, 4, 5]
+
+The rest parameter (...) is used in function definitions to gather all remaining arguments into an array.
+
+Example of Rest Parameter:
+
+function sum(...numbers) {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+console.log(sum(1, 2, 3, 4));  // 10
+
+
+6. What is hoisting in JavaScript? How does it affect variables declared with var, let, and const?
+Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed. This allows you to use functions and variables before they are declared in the code.
+
+var: Variables declared with var are hoisted and initialized with undefined. You can use the variable before the declaration, but it will return undefined until the assignment happens.
+
+let and const: Variables declared with let and const are hoisted but not initialized. They are in a "temporal dead zone" from the start of the block until the declaration is encountered. Trying to access them before declaration will result in a ReferenceError.
+
+Example:
+
+javascript
+Copy code
+console.log(a); // undefined
+var a = 5;
+
+console.log(b); // ReferenceError: Cannot access 'b' before initialization
+let b = 10;
+
+console.log(c); // ReferenceError: Cannot access 'c' before initialization
+const c = 15;
+7. Compare and contrast the three JavaScript keywords used to declare variables: var, let, and const.
+Feature	var	let	const
+Scope	Function-scoped	Block-scoped	Block-scoped
+Hoisting	Hoisted (initialized as undefined)	Hoisted (but not initialized)	Hoisted (but not initialized)
+Redeclaration	Can be redeclared	Cannot be redeclared	Cannot be redeclared
+Reassignment	Can be reassigned	Can be reassigned	Cannot be reassigned
+Initialization	Optional	Optional	Must be initialized
+Main Differences:
+
+Scope:
+
+var is function-scoped, meaning it is accessible anywhere within the function where it's declared.
+let and const are block-scoped, meaning they are only accessible within the block ({}) where they are declared.
+Redeclaration:
+
+var allows the same variable to be declared multiple times in the same scope.
+let and const do not allow redeclaration in the same scope.
+Hoisting:
+
+var variables are hoisted and initialized to undefined, while let and const are hoisted but remain uninitialized (in the "temporal dead zone").
+8. Define block scope and function scope. Which JavaScript keywords (var, let, or const) are associated with each type of scope?
+Block Scope: Refers to the scope of a variable within a block of code, enclosed in curly braces {}. Variables declared with let and const are block-scoped, meaning they are only accessible within the block in which they are defined.
+
+Function Scope: Refers to the scope of variables within a function. Variables declared with var are function-scoped, meaning they are accessible anywhere inside the function, regardless of block structures.
+
+Example of Block Scope:
+
+javascript
+Copy code
+if (true) {
+    let x = 10;
+    console.log(x); // 10
+}
+console.log(x); // ReferenceError: x is not defined
+Example of Function Scope:
+
+javascript
+Copy code
+function myFunc() {
+    var y = 20;
+    if (true) {
+        var y = 30;  // Same variable (function-scoped)
+        console.log(y); // 30
+    }
+    console.log(y); // 30
+}
+myFunc();
+9. Explain the concept of destructuring in JavaScript. How is it used to extract values from arrays and objects?
+Destructuring is a convenient way of extracting values from arrays or objects into distinct variables.
+
+Array Destructuring Example:
+
+javascript
+Copy code
+const arr = [1, 2, 3];
+const [first, second, third] = arr;
+console.log(first);  // 1
+console.log(second); // 2
+console.log(third);  // 3
+Object Destructuring Example:
+
+javascript
+Copy code
+const person = { name: 'John', age: 30 };
+const { name, age } = person;
+console.log(name);  // 'John'
+console.log(age);   // 30
+10. What is the spread operator in JavaScript, and what are its primary uses? How does it differ from the rest parameter?
+The spread operator (...) allows an iterable (like an array or object) to be expanded into individual elements.
+
+Primary Uses:
+
+Copying arrays/objects
+Merging arrays/objects
+Passing elements of an array as arguments to a function
+Example of Spread Operator:
+
+javascript
+Copy code
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2);  // [1, 2, 3, 4, 5]
+The rest parameter (...) is used in function definitions to gather all remaining arguments into an array.
+
+Example of Rest Parameter:
+
+javascript
+Copy code
+function sum(...numbers) {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+console.log(sum(1, 2, 3, 4));  // 10
+
+Difference:
+The spread operator expands an iterable into individual elements.
+The rest parameter gathers elements into an array.

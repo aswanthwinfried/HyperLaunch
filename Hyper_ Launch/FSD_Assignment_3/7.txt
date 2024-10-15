@@ -1,0 +1,9 @@
+7. Compare and contrast the three JavaScript keywords
+ used to declare variables: var, let, and const.
+
+
+ var : Function-scoped , Hoisted (initialized as undefined), Can be redeclared , Can be reassigned.
+
+ let : Block-scoped	, Hoisted (but not initialized), Cannot be redeclared, Can be reassigned
+
+ const : Block-scoped, Hoisted (but not initialized), Cannot be redeclared, Cannot be reassigned

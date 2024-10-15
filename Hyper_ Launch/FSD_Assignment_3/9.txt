@@ -1,0 +1,20 @@
+ Explain the concept of destructuring in JavaScript.
+ How is it used to extract values from arrays and objects ? 
+
+  Destructuring is a convenient way of extracting values from
+  arrays or objects into distinct variables.
+
+  Array Destructuring : 
+  const arr = [1, 2, 3];
+  const [first, second, third] = arr;
+  console.log(first);  // 1
+  console.log(second); // 2
+  console.log(third);  // 3
+
+
+  Object Destructuring : 
+  const person = { name: 'John', age: 30 };
+  const { name, age } = person;
+  console.log(name);  // 'John'
+  console.log(age);   // 30
+

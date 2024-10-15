@@ -1,0 +1,25 @@
+8. Define block scope and function scope. Which JavaScript keywords
+ (var, let, or const) are associated with each type of scope ?
+
+ Block Scope: Refers to the scope of a variable within a block of code, enclosed in curly braces {}. Variables declared with let and 
+ const are block-scoped, meaning they are only accessible within the block in which they are defined.
+ Example: 
+    if (true) {
+    let x = 10;
+    console.log(x); // 10
+}
+console.log(x);
+
+
+ Function Scope: Refers to the scope of variables within a function. Variables declared with var are function-scoped, meaning they 
+ are accessible anywhere inside the function, regardless of block structures.
+ Example:
+ function myFunc() {
+    var y = 20;
+    if (true) {
+        var y = 30;  
+        console.log(y); // 30
+    }
+    console.log(y); // 30
+}
+myFunc();
